@@ -1,0 +1,40 @@
+ # Unifor
+**Disciplina** Raciocínio logico e Algorítimo
+**Orientador** Prof. Ricardo Carubbi 
+
+## Lista de exercícios
+### Exercício 3
+Represente o Fluxograma e o Pseudocódigo para avaliar se um número inteiro positivo é par ou impar.
+#### Fluxograma
+```mermaid
+flowchart TD
+A([INICIO]) --> B{{Digíte um numero}}
+B --> C[/N1/]
+C --> D{N1 > 0}
+D --NÃO-->E{{o número informado é negativo}}
+E-->Z([FIM])
+D --SIM-->F[N1 mod 2 = Rest]
+F --> G{Rest == 0}
+G --NÃO--> H{{O numero informado é impar}}
+G --SIM--> I{{O numero informado é par}}
+I --> Z
+H --> Z
+
+```
+#### Pseudocódigo
+```
+ALGORÍTIMO par_ou_impar
+DECLARE N1, Rest NUMÉRICO
+ESCREVA "Digite um número"
+LEIA N1
+SE N1 > 0
+    Rest <-- N1 mod 2
+    SE Rest == 0
+        ESCREVA "O número informado é par"
+    SENÃO 
+        ESCREVA "O número informado é impar"
+    FIM_ALGORÍTIMO
+SENÃO 
+    ESCREVA "O número informado é negativo"
+    FIM_ALGORÍTIMO    
+```
