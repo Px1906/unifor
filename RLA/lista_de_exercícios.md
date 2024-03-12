@@ -31,13 +31,10 @@ SE N1 > 0
 	Rest <-- N1 mod 2
 	SE Rest == 0
 		ESCREVA "O número informado é par"
-    SENÃO 
-        ESCREVA "O número informado é impar"
-    FIM_SE
+	SENÃO 
+        	ESCREVA "O número informado é impar"
+	FIM_SE
 SENÃO 
-    ESCREVA "O número informado é negativo"
-FIM_SE
-FIM_ALGORÍTIMO    
 ```
 
 ### Exercício 20
@@ -87,41 +84,39 @@ R-->Z([END])
 #### Pseudocódigo
 ```
 1 Algoritimo Calculadora
-2 Declare N1,
-          N2,
-          Rs: float
+2 Declare N1,N2,Rs: float
           Op: int
 3 INICIO
 4 ESCREVA "Intruções da calculadora: 1 = adição, 2 = subtração, 3 = multiplição, 4              
-           = divisão, 5 = divisão inteira, 6 = resto da divisão, 7 = exponenciação/radicação" 
+	  = divisão, 5 = divisão inteira, 6 = resto da divisão, 7 = exponenciação/radicação" 
 5 ESCREVA "Digite o primeiro número da expressão"
 6 LEIA N1
 7 ESCREVA "Digite o operando com base nas intruções"
 8 LEIA Op
 9 SE Op >= 1 e Op <= 7
-10     ESCREVA "Digite o segundo número da expressão"
-11     LEIA N2
-12     ESCOLHA
-13         CASO Op =  1
-14             N1 + N2 == Rs
-15         CASO Op =  2
-16             N1 - N2 == Rs
-17         CASO Op = 3
-18             N1 * N2 == Rs
-19         CASO Op = 4
-20             SE N2 = 0
+10	ESCREVA "Digite o segundo número da expressão"
+11	LEIA N2
+12	ESCOLHA
+13		CASO Op =  1
+14			N1 + N2 == Rs
+15		CASO Op =  2
+16			N1 - N2 == Rs
+17		CASO Op = 3
+18			N1 * N2 == Rs
+19		CASO Op = 4
+20			SE N2 = 0
 21				ESCREVA "ERROR: Impossível dividir por zero"
-22 				FIM_ALGORÍTIMO
-23		 	   SENÃO
-24                N1 / N2 == RS
-25             FIM_SE   
-26         CASO Op = 5
-27             N1 // N2 == Rs
-28         CASO Op = 6
-29             N1 % N2 == Rs
-30         SENÃO
-31             N1 ** N2 == Rs  
-32		   FIM_ESCOLHA 
+22				FIM_ALGORÍTIMO
+23			SENÃO
+24				N1 / N2 == RS
+25			FIM_SE   
+26		CASO Op = 5
+27			N1 // N2 == Rs
+28		CASO Op = 6
+29			N1 % N2 == Rs
+30		SENÃO
+31 			N1 ** N2 == Rs  
+32	FIM_ESCOLHA 
 33 ESCREVA "O seu resultado foi", Rs    
 34 FIM_ALGORÍTIMO
 ```
