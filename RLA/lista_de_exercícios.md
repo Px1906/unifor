@@ -28,16 +28,18 @@ DECLARE N1, Rest NUMÉRICO
 ESCREVA "Digite um número"
 LEIA N1
 SE N1 > 0
-    Rest <-- N1 mod 2
-    SE Rest == 0
-        ESCREVA "O número informado é par"
+	Rest <-- N1 mod 2
+	SE Rest == 0
+		ESCREVA "O número informado é par"
     SENÃO 
         ESCREVA "O número informado é impar"
-    FIM_ALGORÍTIMO
+    FIM_SE
 SENÃO 
     ESCREVA "O número informado é negativo"
-    FIM_ALGORÍTIMO    
+FIM_SE
+FIM_ALGORÍTIMO    
 ```
+
 ### Exercício 20
 Receba dois números reais e um operador (vide slide 9). e efetue a operação
 correspondente com os valores recebidos (operandos). O algoritmo deve retornar o
@@ -108,8 +110,8 @@ R-->Z([END])
 18             N1 * N2 == Rs
 19         CASO Op = 4
 20             SE N2 = 0
-21                ESCREVA "ERROR: Impossível dividir por zero"
-22                FIM_ALGORÍTIMO
+21				ESCREVA "ERROR: Impossível dividir por zero"
+22 				FIM_ALGORÍTIMO
 23		 	   SENÃO
 24                N1 / N2 == RS
 25             FIM_SE   
