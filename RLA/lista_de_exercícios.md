@@ -109,7 +109,7 @@ R-->Z([END])
 19         CASO Op = 4
 20             SE N2 = 0
 21                ESCREVA "ERROR: Impossível dividir por zero"
-22                   VOLTE PARA 4								// é assim? 
+22                FIM_ALGORÍTIMO
 23		 	   SENÃO
 24                N1 / N2 == RS
 25             FIM_SE   
