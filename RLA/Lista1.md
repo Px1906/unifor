@@ -27,7 +27,8 @@ H --> Z
 #### Pseudocódigo (0,5 ponto)
 ```
 ALGORÍTIMO par_ou_impar
-DECLARE N1, Rest NUMÉRICO
+DECLARE N1, Rest: Int
+INICIO
 ESCREVA "Digite um número"
 LEIA N1
 ENQUANTO N1 < 0 FAÇA
@@ -53,25 +54,41 @@ Represente, em fluxograma e pseudocódigo, um algoritmo para calcular o novo sal
 Sabe-se que os funcionários que recebem atualmente salário de até R$ 500 terão aumento de 20%; os demais terão aumento de 10%.
 
 #### Fluxograma (1.0 ponto)
-
 ```mermaid
 flowchart TD
-A([INICIO]) --> B([FIM])
+A([INICIO]) --> B{{Digite o seu salaraio atual}}
+B --> C[/SA/]
+C --> D{SA >= 500}
+D --FALSE--> E[SN = SA * 1.1]
+D --TRUE--> F[SN = SA * 1.2]
+E --> Z{{O seu salario novo é SN}}
+F --> Z
+Z --> Z1([FIM]) 
 ```
 
 #### Pseudocódigo (1.0 ponto)
 
 ```
-Algoritmo ContaAprovacoes
-FIM_ALGORITMO
+ALGORITIMO novo_salário
+DECLARE SA, SN: Int
+INICIO
+ESCREVA "Digite o seu salário atual"
+LEIA SA
+SE SA >= 500
+	SN = SA * 1.1
+SENÃO
+	SN = SA * 1.2
+FIM_SE
+ESCREVA "O seu salário novo é", SN
+FIM_ALGORÍTIMO
 ```
 
 #### Teste de mesa (1.0 ponto)
 
-| nome_coluna1 | nome_coluna2 | nome_coluna3 | nome_coluna4 | nome_coluna5 | 
-|      --      |      --      |      --      |      --      |      --      | 
-| Adicione     | espaço       | se quiser    |  alinhar     | as barras    |
-| verticais,   | mas          | não é        | obrigatório. | Entendido ?  |
+|SA|SA >= 500|SN|SAÍDA|
+|--|--|--|--|
+|470|F|564|O seu salário novo é 564|
+|550|V|605|O seu salário novo é 605|
 
 ## Exercício 03 (3 pontos)
 Represente, em fluxograma e pseudocódigo, um algoritmo para calcular a média aritmética entre duas notas de um aluno e mostrar sua situação, que pode ser aprovado ou reprovado.
