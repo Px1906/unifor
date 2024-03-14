@@ -120,17 +120,17 @@ I --> Z([FIM])
 
 ```
 Algoritmo ContaAprovacoes
-DECLARE N1, N2: Int
+DECLARE N1, N2, Med: Int
 INICIO
 ESCREVA "Digite a sua primeira nota"
 LEIA N1
-ENQUANTO N1 <= 0 e N1 >= 100 FAÇA
+ENQUANTO N1 < 0 e N1 > 100 FAÇA
 	ESCREVA "Digite uma nota válida"
 	LEIA N1
 FIM_ENQUANTO
 ESCREVA "Digite a sua segunda nota"
 LEIA N2 
-ENQUANTO N2 <= 0 e N2 >= 100 FAÇA
+ENQUANTO N2 < 0 e N2 > 100 FAÇA
 	ESCREVA "Digite uma nota válida"
 	LEIA N2
 FIM_ENQUANTO
@@ -141,17 +141,16 @@ SENÃO
 	ESCREVA "Voce foi reprovado"
 FIM_SE
 FIM_ALGORITIMO 
-
-FIM_ALGORITMO
 ```
 
 #### Teste de mesa (1 ponto)
 
-| nome_coluna1 | nome_coluna2 | nome_coluna3 | nome_coluna4 | nome_coluna5 | 
-|      --      |      --      |      --      |      --      |      --      | 
-| Adicione     | espaço       | se quiser    |  alinhar     | as barras    |
-| verticais,   | mas          | não é        | obrigatório. | Entendido ?  |
-
+|N1|N1 < 0 e N1 > 100|N2|N2 < 0 e N2 > 100|Med = (N1 + N2)/2|Med >= 70|Saída|
+|--|--|--|--|--|--|--|
+|100|F|60|F|80|V|Voce foi aprovado|
+|60|F|70|F|65|F|Voce foi reprovado|
+|-70|V|-|-|-|-|Digite uma nota válida|
+|50|F|150|V|-|-|Digite uma nota válida|
 ## Exercício 04 (3 pontos)
 Represente, em fluxograma e pseudocódigo, um algoritmo que, a partir da idade do candidato(a), determinar se pode ou não tirar a CNH. 
 Caso não atender a restrição de idade, calcular quantos anos faltam para o candidato estar apto.
