@@ -178,6 +178,20 @@ I --> Z
 
 ```
 Algoritmo ContaAprovacoes
+DECLARE Id, Idr: Int
+INICIO
+ESCREVA "Digite a sua idade"
+LEIA Id
+ENQUANTO Id < 0 FAÇA 
+	ESCREVA "Digite uma idade valida"
+	LEIA Id
+FIM_ENQUANTO
+SE Id >= 18
+	ESCREVA "Voce ja pode tirar o seu CNH"
+SENÃO
+	Idr = 18 - Id
+	ESCREVA "Voce não pode tirar o CNH, ainda lhe falta", Idr, "anos"
+FIM_SE
 FIM_ALGORITMO
 ```
 
