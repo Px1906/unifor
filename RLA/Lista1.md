@@ -164,7 +164,7 @@ B --> C[/Id/]
 C --> D{Id >= 0}
 D --FALSE--> E{{Digite uma idade válida}}
 E --> C
-D --TRUE--> F[Id >= 18]
+D --TRUE--> F{Id >= 18}
 F --FALSE--> G[Idr = 18 - Id]
 G --> H{{Voce não pode tirar o CNH, ainda lhe falta Idr anos}}
 F --TRUE--> I{{Voce ja pode tirar o seu CNH}}
