@@ -97,13 +97,51 @@ Represente, em fluxograma e pseudocódigo, um algoritmo para calcular a média a
 
 ```mermaid
 flowchart TD
-A([INICIO]) --> B([FIM])
+A([INICIO]) --> B{{Digite a sua primeira nota}}
+B --> C[/N1/]
+C --> L{N1 >= 0 e N1 <= 100}
+L --TRUE--> D{{Digite a sua segunda nota}}
+L --FALSE--> M{{Digite uma nota válida}}
+M --> C
+D --> E[/N2/]
+E --> N{N2 >= 0 e N2 <= 100}
+N --TRUE--> F[Soma = N1 + N2]
+F --> X[Med = Soma / 2]
+X --> G{Med >= 70}
+N --FALSE--> O{{Digite uma nota válida}}
+O --> E
+G --FALSE--> H{{Voce foi reprovado}}
+G --TRUE--> I{{Voce foi aprovado}}
+H --> Z
+I --> Z([FIM])
 ```
 
 #### Pseudocódigo (1 ponto)
 
 ```
 Algoritmo ContaAprovacoes
+DECLARE N1, N2: Int
+INICIO
+ESCREVA "Digite a sua primeira nota"
+LEIA N1
+ENQUANTO N1 <= 0 e N1 >= 100 FAÇA
+	ESCREVA "Digite uma nota válida"
+	LEIA N1
+FIM_ENQUANTO
+ESCREVA "Digite a sua segunda nota"
+LEIA N2 
+ENQUANTO N2 <= 0 e N2 >= 100 FAÇA
+	ESCREVA "Digite uma nota válida"
+	LEIA N2
+FIM_ENQUANTO
+Med = (N1 + N2)/2
+SE Med >= 70
+	ESCREVA "Voce foi aprovado"
+SENÃO
+	ESCREVA "Voce foi reprovado"
+FIM_SE
+FIM_ALGORITIMO 
+
 FIM_ALGORITMO
 ```
 
