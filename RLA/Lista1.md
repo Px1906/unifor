@@ -11,47 +11,43 @@ Represente, em fluxograma e pseudocódigo, um algoritmo para determinar se um n�
 
 ```mermaid
 flowchart TD
-A([INICIO]) --> B{{Digite um número:}}
-B --> C[\numero\]
-C --> D{numero >= 0}
-D --FALSE--> E[O número não é positivo!]
-D --TRUE--> F[resto = numero % 2]
-E --> Z([FIM])
-F --> G{resto == 0}
-G --FALSE--> H{{O número é impar!}}
-G --TRUE--> I{{O número é par!}}
+A([INICIO]) --> B{{Digíte um numero}}
+B --> C[/N1/]
+C --> D{N1 < 0}
+D --TRUE-->E{{o número informado é negativo}}
+E -->B
+D --FALSE-->F[Rest = N1 % 2]
+F --> G{Rest == 0}
+G --FALSE--> H{{O numero informado é impar}}
+G --TRUE--> I{{O numero informado é par}}
+I --> Z([FIM])
 H --> Z
-I --> Z
 ```
 
 #### Pseudocódigo (0,5 ponto)
 ```
-1  ALGORTIMO verifica_par_impar
-2  DECLARE numero, resto: INTEIRO
-3  ESCREVA "Digite um número: "
-4  INICIO
-4  LEIA numero
-5  SE numero >= 0 ENTAO                  // verifica se o inteiro é positivo
-6    resto = numero % 2                 // calcula o resto da divisão por 2
-7    SE resto == 0 ENTAO                // verifica se o resto é igual a zero
-8      ESCREVA "O número é par!"
-9    SENAO
-10     ESCREVA "O número é impar!"
-11   FIM_SE
-11  SENAO                                // caso inteiro for negativo (condição linha 5)
-12    ESCREVA "O número deve ser postivo!"
-13  FIM_SE
-13 FIM
+ALGORÍTIMO par_ou_impar
+DECLARE N1, Rest NUMÉRICO
+ESCREVA "Digite um número"
+LEIA N1
+ENQUANTO N1 < 0 FAÇA
+	ESCREVA "O número informado é negativo"
+FIM_ENQUANTO
+Rest = N1 % 2
+SE Rest == 0
+	ESCREVA "O número informado é par"
+SENÃO 
+	ESCREVA "O número informado é impar"
+FIM_SE
+FIM_ALGORITIMO
 ```
 
 #### Teste de mesa (0,25 ponto)
-| numero | numero >= 0 | resto | resto == 0 | Saída |
-| -- | -- | -- | -- | -- | 
-| -1 | F |   |   | "O número deve ser postivo!" |
-| 0  | V | 0 | V | "O número é par!" |
-| 13 | V | 1 | F | "O número é impar!" |
-| 30 | V | 0 | V | "O número é par!" |
-
+|N1|N1 < 0|Rest = N1 % 2|Rest == 0|Saída|
+|--|--|--|--|--|
+|7|F|1|F|O número informado é impar
+|18|F|0|T|O número informado é par
+|-72|V|-|-|O número informado é negativo
 ## Exercício 02 (3 pontos)
 Represente, em fluxograma e pseudocódigo, um algoritmo para calcular o novo salário de um funcionário. 
 Sabe-se que os funcionários que recebem atualmente salário de até R$ 500 terão aumento de 20%; os demais terão aumento de 10%.
