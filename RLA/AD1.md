@@ -9,7 +9,7 @@
 **Matrícula:** 2410330 <br>
 
 **1a chamada (Sim/Não):** Sim <br>
-**2a chamada (Sim/Não):** preencha com a opção correta
+**2a chamada (Sim/Não):** Não
 
 # Avaliação Diagnóstica 1
 
