@@ -44,22 +44,39 @@ Dadas duas variáveis, $a$ e $b$, implemente e teste um algoritmo para trocar os
 
 ```mermaid
 flowchart TD
-A([INICIO]) --> B([FIM])
+A([INICIO]) --> B{{"Digite o valor de A"}}
+B --> C[/A/]
+C --> D{{"Digite o valor de B"}}
+D --> E[/B/]
+E --> F(Mem = B)
+F --> G(B = A)
+G --> H(A = Mem)
+H --> I{{A, B}}
+I --> J([FIM])
 ```
 
 #### Pseudocódigo (0.5 ponto)
 
 ```
-Algoritmo TrocaValores
-FIM_ALGORITMO
+1 Algoritmo TrocaValores
+2 DECLARE A, B, Mem: float
+3 INICIO
+4 ESCREVA "Digite o valor de A"
+5 LEIA A
+6 ESCREVA "Digite o valor de B"
+7 LEIA B
+8 Mem = B
+9 B = A
+10 A = Mem
+11 ESCREVA A, B
+12 FIM_ALGORITMO
 ```
 
 #### Teste de mesa (0.25 ponto)
 
-| nome_coluna1 | nome_coluna2 | nome_coluna3 | nome_coluna4 | nome_coluna5 | 
-|      --      |      --      |      --      |      --      |      --      | 
-| Adicione     | espaço       | se quiser    |  alinhar     | as barras    |   
-| verticais,   | mas          | não é        | obrigatório. | Entendido ?  |
+| A  | B | Mem = B | B = A | A = Mem | Saida |
+| -- | -- | -- | -- | -- | -- |
+| 10 | 4 | 4 | 10 | 4 | 4, 10
 
 ### Questão 2 - Contagem (1 ponto)
 
