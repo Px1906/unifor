@@ -166,7 +166,7 @@ D --FALSE--> E{{Digite uma idade válida}}
 E --> C
 D --TRUE--> F{Id >= 18}
 F --FALSE--> G[Idr = 18 - Id]
-G --> H{{Voce não pode tirar o CNH, ainda lhe falta Idr anos}}
+G --> H{{"Voce não pode tirar o CNH, ainda lhe falta Idr ano(s)"}} 
 F --TRUE--> I{{Voce ja pode tirar o seu CNH}}
 H --> Z([FIM])
 I --> Z
@@ -190,14 +190,17 @@ SE Id >= 18
 	ESCREVA "Voce ja pode tirar o seu CNH"
 SENÃO
 	Idr = 18 - Id
-	ESCREVA "Voce não pode tirar o CNH, ainda lhe falta", Idr, "anos"
+	ESCREVA "Voce não pode tirar o CNH, ainda lhe falta", Idr, "ano(s)"
 FIM_SE
 FIM_ALGORITMO
 ```
 
 #### Teste de mesa (1.0 ponto)
 
-| nome_coluna1 | nome_coluna2 | nome_coluna3 | nome_coluna4 | nome_coluna5 | 
-|      --      |      --      |      --      |      --      |      --      | 
-| Adicione     | espaço       | se quiser    |  alinhar     | as barras    |
-| verticais,   | mas          | não é        | obrigatório. | Entendido ?  |
+|Id|Id < 0|Id >= 18|Idr = 18 - Id|Saída| 
+|--|--|--|--|--| 
+|17|F|F|1|Voce não pode tirar o CNH, ainda lhe falta 1 ano(s)|
+|-9999999999999|V|-|-|Digite uma idade valida|
+|19|F|V|-|Voce ja pode tirar o seu CNH
+
+
