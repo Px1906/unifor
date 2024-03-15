@@ -1,7 +1,7 @@
 
 # UNIFOR
-**Nome**: Nome do estudante <br>
-**Disciplina**: Raciocínio lógico algorítm
+**Nome**: Sergio de Paiva Ximenes Filho <br>
+**Disciplina**: Raciocínio Lógico Algorítmo
 
 ## Exercício exemplo
 Represente, em fluxograma e pseudocódigo, um algoritmo para calcular o adicional de salário de funcionário por cargo de uma empresa fictícia. Sabe-se que os funcionários de cargo técnico receberão reajuste de 50%, cargo de gerência, um reajuste de 30% e demais, um reajuste de 10%. 
@@ -56,22 +56,45 @@ Calcule a média de quatro números inteiros dados.
 
 ```mermaid
 flowchart TD
-A([INICIO]) --> B([FIM])
+A([INICIO]) --> B{{Digite o seu primeiro numero}}
+B --> C[/N1/]
+C --> D{{Digite o seu segundo número}}
+D --> E[/N2/]
+E --> F{{Digite o seu terceiro número}}
+F --> G[/N3/]
+G --> H{{Digite o seu ultimo número}}
+H --> I[/N4/]
+I --> J["Med = (N1 + N2 + N3 + N4)/4"]
+J --> K{{A média entre os números dados é Med}}
+K --> L([FIM])
 ```
 
 #### Pseudocódigo (1.0 ponto)
 
 ```
 Algoritmo Media
+DECLARE N1, N2, N3, N4: int
+	Med: float
+INICIO
+ESCREVA "Digite o seu primeiro número"
+LEIA N1
+ESCREVA "Digite o seu segundo número"
+LEIA N2
+ESCREVA "Digite o seu terceiro número"
+LEIA N3
+ESCREVA "Digite o seu ultimo número"
+LEIA N4
+Med = (N1 + N2 + N3 + N4)/4
+ESCREVA "A média dos números dados é", Med
 FIM_ALGORITMO
 ```
 
 #### Teste de mesa (0.5 ponto)
 
-| nome_coluna1 | nome_coluna2 | nome_coluna3 | nome_coluna4 | nome_coluna5 | 
-|      --      |      --      |      --      |      --      |      --      | 
-| Adicione     | espaço       | se quiser    |  alinhar     | as barras    |
-| verticais,   | mas          | não é        | obrigatório. | Entendido ?  |
+|N1|N2|N3|N4|Med = (N1 + N2 + N3 + N4)/4|Saída| 
+|--|--|--|--|--|--|
+|-80|97|45|-3|-7.25|A média dos números dados é Med|
+
 
 ### Exercício 02 (2.5 pontos)
 Leia uma temperatura dada em Celsius (C) e imprima o equivalente em Fahrenheit (F). (Fórmula de conversão: F = (9/5) * C + 32)
