@@ -221,9 +221,17 @@ FIM_ALGORÍTIMO
 #### Teste de mesa (0.5 ponto)
 
 |N1|Op|N2|Op == 1|Op == 2|Op == 3|Op == 4|N2 == 0|Op == 5|N2 == 0|Op == 6|Rs|Saída| 
-|--|--|--|--|--|--|--|--|--|--|--|
-|8|1|10|V|F|F|F|F|F|F|F|
-| verticais,   | mas          | não é        | obrigatório. | Entendido ?  |
+|--|--|--|--|--|--|--|--|--|--|--|--|--|
+|8|1|10|V|-|-|-|-|-|-|-|18|O seu resultado foi 18|
+|20|2|-20|F|V|-|-|-|-|-|-|0|O seu resultado foi 0|
+|87|3|0|F|F|V|-|-|-|-|-|0|O seu resultado foi 0|
+|0.2|4|0.1|F|F|F|V|F|-|-|-|2|O seu resultado foi 2|
+|120|4|0|F|F|F|V|V|-|-|-|-|ERROR: impossível dividir por zero, digite um novo denominador|
+|25|5|7|F|F|F|F|-|V|F|-|3|O seu resultado foi 3|
+|37|5|0|F|F|F|F|-|V|V|-|-|ERROR: impossível dividir por zero, digite um novo denominador|
+|31|6|2|F|F|F|F|-|F|-|V|1|O seu resultado é 1|
+|2|7|5|F|F|F|F|-|F|-|F|32|O seu resultado é 32|
+
 
 ### Exercício 04 (2.5 pontos)
 Elaborar um algoritmo que, dada a idade, classifique nas categorias: infantil A (5 - 7 anos), infantil B (8 -10 anos), juvenil A (11 - 13 anos), juvenil B (14 -17 anos) e adulto (maiores que 18 anos).
