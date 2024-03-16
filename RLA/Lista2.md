@@ -147,29 +147,29 @@ G--FALSE-->H{{O número do operando precisa ser maior que um e menor que sete}}
 H-->B
 G--TRUE-->I{{Digite o segundo número da expressão}}
 I-->J[/N2/]
-J-->K{Op = 1}
-K--FALSE-->L{Op = 2}
-K--TRUE-->k(N1 + N2 == Rs)
+J-->K{Op == 1}
+K--FALSE-->L{Op == 2}
+K--TRUE-->k(N1 + N2 = Rs)
 k-->R
-L--FALSE-->M{Op = 3}
-L--TRUE-->l(N1 - N2 == Rs)
+L--FALSE-->M{Op == 3}
+L--TRUE-->l(N1 - N2 = Rs)
 l-->R
-M--FALSE-->N{Op = 4}
-M--TRUE-->m(N1 * N2 == Rs)
+M--FALSE-->N{Op == 4}
+M--TRUE-->m(N1 * N2 = Rs)
 m-->R
-N--FALSE-->O{Op = 5}
-N--TRUE-->n{N2 = 0}
-n--FALSE-->n2(N1 / N2 == Rs)
+N--FALSE-->O{Op == 5}
+N--TRUE-->n{N2 == 0}
+n--FALSE-->n2(N1 / N2 = Rs)
 n--TRUE-->n3{{ERROR: Impossívem dividir por zero}}
 n2-->R
 n3-->B
-O--FALSE-->P{Op = 6}
-O--TRUE-->o(N1 // N2 == Rs)
+O--FALSE-->P{Op == 6}
+O--TRUE-->o(N1 // N2 = Rs)
 o-->R
 P--FALSE-->q
-P--TRUE-->p(N1 % N2 == Rs)
+P--TRUE-->p(N1 % N2 = Rs)
 p-->R
-q(N1 ** N2 == Rs)
+q(N1 ** N2 = Rs)
 q-->R{{O seu resultado foi Rs}}
 R-->Z([END])
 ```
@@ -177,49 +177,52 @@ R-->Z([END])
 #### Pseudocódigo (1.0 ponto)
 
 ```
-1 Algoritimo Calculadora
-2 Declare N1,N2,Rs: float
-          Op: int
-3 INICIO
-4 ESCREVA "Intruções da calculadora: 1 = adição, 2 = subtração, 3 = multiplição, 4              
+ Algoritimo Calculadora
+ DECLARE N1,N2,Rs: float
+	 Op: int
+ INICIO
+ ESCREVA "Intruções da calculadora: 1 = adição, 2 = subtração, 3 = multiplição, 4              
 	  = divisão, 5 = divisão inteira, 6 = resto da divisão, 7 = exponenciação/radicação" 
-5 ESCREVA "Digite o primeiro número da expressão"
-6 LEIA N1
-7 ESCREVA "Digite o operando com base nas intruções"
-8 LEIA Op
-9 SE Op >= 1 e Op <= 7
-10	ESCREVA "Digite o segundo número da expressão"
-11	LEIA N2
-12	ESCOLHA
-13		CASO Op =  1
-14			N1 + N2 == Rs
-15		CASO Op =  2
-16			N1 - N2 == Rs
-17		CASO Op = 3
-18			N1 * N2 == Rs
-19		CASO Op = 4
-20			SE N2 = 0
-21				ESCREVA "ERROR: Impossível dividir por zero"
-22				FIM_ALGORÍTIMO
-23			SENÃO
-24				
-25			FIM_SE   
-26		CASO Op = 5
-27			N1 // N2 == Rs
-28		CASO Op = 6
-29			N1 % N2 == Rs
-30		SENÃO
-31 			N1 ** N2 == Rs  
-32	FIM_ESCOLHA 
-33 ESCREVA "O seu resultado foi", Rs    
-  FIM_ALGORÍTIMO
+ ESCREVA "Digite o primeiro número da expressão"
+ LEIA N1
+ ESCREVA "Digite o operando com base nas intruções"
+ LEIA Op
+ SE Op >= 1 e Op <= 7
+	ESCREVA "Digite o segundo número da expressão"
+	LEIA N2
+	ESCOLHA
+		CASO Op =  1
+			Rs = N1 + N2
+		CASO Op =  2
+			Rs = N1 - N2
+		CASO Op = 3
+			Rs = N1 * N2
+		CASO Op = 4
+		        ENQUANTO N2 == 0 FAÇA
+				ESCREVA "ERROR: impossível dividir por zero, digite um novo denominador"
+				LEIA N2
+			FIM_ENQUANTO
+			Rs = N1 / N2
+		CASO Op = 5
+			ENQUANTO N2 == 0 FAÇA
+				ESCREVA "ERROR: impossível dividir por zero, digite um novo denominador"
+				LEIA N2
+			FIM_ENQUANTO
+			Rs = N1 // N2
+		CASO Op = 6
+			Rs = N1 % N2
+		SENÃO
+ 			Rs = N1 ** N2   
+	FIM_ESCOLHA 
+ESCREVA "O seu resultado foi", Rs    
+FIM_ALGORÍTIMO
 ```
 
 #### Teste de mesa (0.5 ponto)
 
-| nome_coluna1 | nome_coluna2 | nome_coluna3 | nome_coluna4 | nome_coluna5 | 
-|      --      |      --      |      --      |      --      |      --      | 
-| Adicione     | espaço       | se quiser    |  alinhar     | as barras    |
+|N1|Op|N2|Op == 1|Op == 2|Op == 3|Op == 4|N2 == 0|Op == 5|N2 == 0|Op == 6|Rs|Saída| 
+|--|--|--|--|--|--|--|--|--|--|--|
+|8|1|10|V|F|F|F|F|F|F|F|
 | verticais,   | mas          | não é        | obrigatório. | Entendido ?  |
 
 ### Exercício 04 (2.5 pontos)
