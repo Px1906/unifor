@@ -103,22 +103,31 @@ Leia uma temperatura dada em Celsius (C) e imprima o equivalente em Fahrenheit (
 
 ```mermaid
 flowchart TD
-A([INICIO]) --> B([FIM])
+A([INICIO]) --> B{{Digite a temperatura em graus celcius}}
+B --> C[/Ce/]
+C --> D["Fa = (9/5) * Ce + 32"]
+D --> E{{A temperatura covertida para graus fahrenheit é Fa}}
+E --> F([FIM])
 ```
 
 #### Pseudocódigo (1.0 ponto)
 
 ```
 Algoritmo ConverteCelsiusFarenheit
+DECLARE Ce, Fe: float
+INICIO
+ESCREVA "Digite a temperatura em graus celcius"
+LEIA Ce
+Fa = (9/5) * Ce + 32
+ESCREVA "A temperatura covertida para graus fahrenheit é", Fa
 FIM_ALGORITMO
 ```
 
 #### Teste de mesa (0.5 ponto)
 
-| nome_coluna1 | nome_coluna2 | nome_coluna3 | nome_coluna4 | nome_coluna5 | 
-|      --      |      --      |      --      |      --      |      --      | 
-| Adicione     | espaço       | se quiser    |  alinhar     | as barras    |
-| verticais,   | mas          | não é        | obrigatório. | Entendido ?  |
+|Ce|Fa = (9/5) * Ce + 32|Saída|
+|--|--|--| 
+|0|32|A temperatura covertida para graus fahrenheit é 32|
 
 ### Exercício 03 (2.5 pontos)
 Receba dois números reais e um operador e efetue a operação correspondente com os valores recebidos (operandos). 
@@ -128,14 +137,82 @@ O algoritmo deve retornar o resultado da operação selecionada simulando todas 
 
 ```mermaid
 flowchart TD
-A([INICIO]) --> B([FIM])
+A([START]) --> B{{Intruções da calculadora: 1 = adição, 2 = subtração, 3 = multiplição, 4 = divisão, 5 = divisão inteira, 6 = resto da divisão, 7 = exponenciação/radicação}}
+B-->C{{Digite o primeiro número da expressão}}
+C-->D[/N1/]
+D-->E{{Digite o operando com base nas intruções}}
+E-->F[/Op/]
+F-->G{Op >= 1 and Op <= 7}
+G--FALSE-->H{{O número do operando precisa ser maior que um e menor que sete}}
+H-->B
+G--TRUE-->I{{Digite o segundo número da expressão}}
+I-->J[/N2/]
+J-->K{Op = 1}
+K--FALSE-->L{Op = 2}
+K--TRUE-->k(N1 + N2 == Rs)
+k-->R
+L--FALSE-->M{Op = 3}
+L--TRUE-->l(N1 - N2 == Rs)
+l-->R
+M--FALSE-->N{Op = 4}
+M--TRUE-->m(N1 * N2 == Rs)
+m-->R
+N--FALSE-->O{Op = 5}
+N--TRUE-->n{N2 = 0}
+n--FALSE-->n2(N1 / N2 == Rs)
+n--TRUE-->n3{{ERROR: Impossívem dividir por zero}}
+n2-->R
+n3-->B
+O--FALSE-->P{Op = 6}
+O--TRUE-->o(N1 // N2 == Rs)
+o-->R
+P--FALSE-->q
+P--TRUE-->p(N1 % N2 == Rs)
+p-->R
+q(N1 ** N2 == Rs)
+q-->R{{O seu resultado foi Rs}}
+R-->Z([END])
 ```
 
 #### Pseudocódigo (1.0 ponto)
 
 ```
-Algoritmo Calculadora
-FIM_ALGORITMO
+1 Algoritimo Calculadora
+2 Declare N1,N2,Rs: float
+          Op: int
+3 INICIO
+4 ESCREVA "Intruções da calculadora: 1 = adição, 2 = subtração, 3 = multiplição, 4              
+	  = divisão, 5 = divisão inteira, 6 = resto da divisão, 7 = exponenciação/radicação" 
+5 ESCREVA "Digite o primeiro número da expressão"
+6 LEIA N1
+7 ESCREVA "Digite o operando com base nas intruções"
+8 LEIA Op
+9 SE Op >= 1 e Op <= 7
+10	ESCREVA "Digite o segundo número da expressão"
+11	LEIA N2
+12	ESCOLHA
+13		CASO Op =  1
+14			N1 + N2 == Rs
+15		CASO Op =  2
+16			N1 - N2 == Rs
+17		CASO Op = 3
+18			N1 * N2 == Rs
+19		CASO Op = 4
+20			SE N2 = 0
+21				ESCREVA "ERROR: Impossível dividir por zero"
+22				FIM_ALGORÍTIMO
+23			SENÃO
+24				
+25			FIM_SE   
+26		CASO Op = 5
+27			N1 // N2 == Rs
+28		CASO Op = 6
+29			N1 % N2 == Rs
+30		SENÃO
+31 			N1 ** N2 == Rs  
+32	FIM_ESCOLHA 
+33 ESCREVA "O seu resultado foi", Rs    
+  FIM_ALGORÍTIMO
 ```
 
 #### Teste de mesa (0.5 ponto)
