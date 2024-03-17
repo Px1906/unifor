@@ -242,7 +242,7 @@ Elaborar um algoritmo que, dada a idade, classifique nas categorias: infantil A 
 flowchart TD
 A([INICIO]) --> B{{Digite a idade}}
 B --> C[/Id/]
-C --> D{Id >= 5}
+C --> D{Id < 5}
 D --FALSE--> E{{Digite uma idade válida}}
 E --> C
 D --TRUE--> F{Id >= 5 e Id =<7}
