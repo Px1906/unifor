@@ -262,15 +262,38 @@ N --> Z
 ```
 
 #### Pseudocódigo (1.0 ponto)
-
 ```
 Algoritmo ClassificaCategoria
+DECLARE Id: int
+INICIO
+ESCREVA "Digite a idade"
+LEIA Id
+ENQUANTO Id < 5 FAÇA
+	ESCREVA "Digite uma idade válida"
+	LEIA Id
+ESCOLHA
+	CASO Id >= 5 e Id <= 7
+		ESCREVA "Infantil A"
+	CASO Id >= 8 e Id <=10
+		ESCREVA "Infantil B"
+	CASO Id >= 11 e Id <= 13
+		ESCREVA "juvenil A"
+	CASO Id >= 14 e Id <= 17
+		ESCREVA "Juvenil B"
+SENAO
+	ESCREVA "Adulto"
+FIM_ESCOLHA 
 FIM_ALGORITMO
 ```
 
 #### Teste de mesa (0.5 ponto)
 
-| nome_coluna1 | nome_coluna2 | nome_coluna3 | nome_coluna4 | nome_coluna5 | 
-|      --      |      --      |      --      |      --      |      --      | 
-| Adicione     | espaço       | se quiser    |  alinhar     | as barras    |
-| verticais,   | mas          | não é        | obrigatório. | Entendido ?  |
+
+|Id|Id < 5|Id >= 5 e Id <= 7|Id >= 8 e Id <= 10|Id >= 11 e Id <= 13|Id >= 14 e Id <= 17|Saida|
+|--|--|--|--|--|--|--|
+|-5|V|-|-|-|-|Digite uma idade valida|
+|5|F| V|-|-|-|Infantil A|
+|9|F| F|V|-|-|Infantil B|
+|11|F|F|F|V|-|Juvenil A|
+|17|F|F|F|F|V|Juvenil B|
+|24|F|F|F|F|F|Adulto|
