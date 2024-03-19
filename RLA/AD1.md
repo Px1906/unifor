@@ -141,26 +141,26 @@ FIM_ALGORÍRIMO
 | 1        | Mensagem: "Insira a nota"                         |                |         |       |
 |          | Entrada: nota                                     | 70             |         |       |
 |          | Condição SE: 70 >= 50 e 70 <= 100 (verdadeiro)   |                |         |       |
-|          | - N_aprov += 1                                    |                | 1       | 1     |
-|          | - N_ver += 1                                      |                |         | 1     |
+|          |  N_aprov += 1                                    |                | 1       | 1     |
+|          |  N_ver += 1                                      |                |         | 1     |
 | 2        | Mensagem: "Insira a nota"                         |                |         |       |
 |          | Entrada: nota                                     | 30             |         |       |
 |          | Condição SE: 30 >= 50 e 30 <= 100 (falso)        |                |         |       |
-|          | - N_ver += 1                                      |                |         | 2     |
+|          |  N_ver += 1                                      |                |         | 2     |
 | 3        | Mensagem: "Insira a nota"                         |                |         |       |
 |          | Entrada: nota                                     | 85             |         |       |
 |          | Condição SE: 85 >= 50 e 85 <= 100 (verdadeiro)   |                |         |       |
-|          | - N_aprov += 1                                    |                | 2       | 3     |
-|          | - N_ver += 1                                      |                |         | 3     |
+|          |  N_aprov += 1                                    |                | 2       | 3     |
+|          |  N_ver += 1                                      |                |         | 3     |
 | 4        | Mensagem: "Insira a nota"                         |                |         |       |
 |          | Entrada: nota                                     | 95             |         |       |
 |          | Condição SE: 95 >= 50 e 95 <= 100 (verdadeiro)   |                |         |       |
-|          | - N_aprov += 1                                    |                | 3       | 4     |
-|          | - N_ver += 1                                      |                |         | 4     |
+|          |  N_aprov += 1                                    |                | 3       | 4     |
+|          |  N_ver += 1                                      |                |         | 4     |
 | 5        | Mensagem: "Insira a nota"                         |                |         |       |
 |          | Entrada: nota                                     | 40             |         |       |
 |          | Condição SE: 40 >= 50 e 40 <= 100 (falso)        |                |         |       |
-|          | - N_ver += 1                                      |                |         | 5     |
+|          |  N_ver += 1                                      |                |         | 5     |
 | -        | **Saída de Resultados**                           |                |         |       |
 | -        | Mensagem: "A quantidade de notas aprovadas foi 3"|                |         |       |
 
@@ -176,22 +176,86 @@ Aceite apenas $n$ maior ou igual a zero.
 
 ```mermaid
 flowchart TD
-A([INICIO]) --> B([FIM])
+A([INICIO]) --> B[num_somados = 0]
+B --> C[soma = 0]
+C --> D{{Digite o número de elementos do conjunto que você quer somar}}
+D --> E[/num_som/]
+E --> F{num_som > 0}
+F--FALSE--> G{{Digite uma quantidade válida}}
+G --> E
+G --TRUE--> H{num_som = num_somados}
+H --FALSE--> I{{Digite um número}}
+I --> J[/num/]
+J --> K[soma = soma + num]
+K --> L[num_somados =+ 1]
+L --> H
+H --TRUE--> M{{A valor da soma total é soma}}
+M --> N([FIM])
 ```
 
 #### Pseudocódigo (0.5 ponto)
 
 ```
 Algoritmo ContaAprovacoes
+DECLARE num_somados, num_som: Int
+	num, soma: Float
+INICIO
+num_somados = 0
+soma = 0
+ESCREVA "Digite o número de elementos do conjunto que você quer somar"
+LEIA num_som
+ENQUANTO num_som < 0 FAÇA
+	ESCREVA "Digite uma quantidade válida"
+	LEIA num_som
+FIM_ENQUANTO
+PARA num_somados DE 0 até Num_soma [PASSO 1] FAÇA
+	ESCREVA "Digite um número"
+	LEIA num
+	soma =+ num
+	num_somados =+ 1
+FIM_PARA
+ESCREVA "O valor da soma total é", soma
 FIM_ALGORITMO
 ```
 
 #### Teste de mesa (0.25 ponto)
+##### Chat GPT
 
-| nome_coluna1 | nome_coluna2 | nome_coluna3 | nome_coluna4 | nome_coluna5 | 
-|      --      |      --      |      --      |      --      |      --      | 
-| Adicione     | espaço       | se quiser    |  alinhar     | as barras    |
-| verticais,   | mas          | não é        | obrigatório. | Entendido ?  |
+| Iteração | Ação                                              | Entrada/Saída | soma | num_somados |
+|----------|---------------------------------------------------|---------------|------|-------------|
+| -        | **Inicialização das Variáveis**                   |               | 0    | 0           |
+| -        | **Entrada do Número de Elementos a Somar**        | 7             |      |             |
+| 1        | Mensagem: "Digite um número"                      |               |      |             |
+|          | Entrada: num                                      | 0.5           |      |             |
+|          |  soma += num                                     |               | 0.5  |             |
+|          |  num_somados += 1                                |               |      | 1           |
+| 2        | Mensagem: "Digite um número"                      |               |      |             |
+|          | Entrada: num                                      | -1.25         |      |             |
+|          |  soma += num                                     |               | -0.75|             |
+|          |  num_somados += 1                                |               |      | 2           |
+| 3        | Mensagem: "Digite um número"                      |               |      |             |
+|          | Entrada: num                                      | 2.75          |      |             |
+|          |  soma += num                                     |               | 2    |             |
+|          |  num_somados += 1                                |               |      | 3           |
+| 4        | Mensagem: "Digite um número"                      |               |      |             |
+|          | Entrada: num                                      | 0             |      |             |
+|          |  soma += num                                     |               | 2    |             |
+|          |  num_somados += 1                                |               |      | 4           |
+| 5        | Mensagem: "Digite um número"                      |               |      |             |
+|          | Entrada: num                                      | -3.5          |      |             |
+|          |  soma += num                                     |               | -1.5 |             |
+|          |  num_somados += 1                                |               |      | 5           |
+| 6        | Mensagem: "Digite um número"                      |               |      |             |
+|          | Entrada: num                                      | 1.75          |      |             |
+|          |  soma += num                                     |               | 0.25 |             |
+|          |  num_somados += 1                                |               |      | 6           |
+| 7        | Mensagem: "Digite um número"                      |               |      |             |
+|          | Entrada: num                                      | -2.25         |      |             |
+|          |  soma += num                                     |               | -2    |             |
+|          |  num_somados += 1                                |               |      | 7           |
+| -        | **Saída de Resultados**                           |               |      |             |
+| -        | Mensagem: "O valor da soma total é -2"            |               |      |             |
+
 
 ### Questão 4 - Cálculo de uma série (1 ponto)
 
