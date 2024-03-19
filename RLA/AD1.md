@@ -359,22 +359,102 @@ Dado um número $n$, calcular o fatorial de $n$ (escrito como $n!$), onde $n ≥
 
 ```mermaid
 flowchart TD
-A([INICIO]) --> B([FIM])
+A([INICIO]) --> B[fato = 1]
+B --> R[n_mult = 0]
+R-->C{{Digite o numero do fatorial que voce quer calcular}}
+C --> D[/n/]
+D --> E{n >= 0}
+E --FALSE--> F{{Digite um fatorial válido}}
+F --> D
+E --TRUE--> G{n = n_mult}
+G --FALSE--> H[n_mult =+ 1]
+H --> I[fato = fato * n_mult]
+I --> G
+G --TRUE--> Y{{O valor do fatorial de n é fato}}
+Y --> Z([FIM]) 
 ```
-
 #### Pseudocódigo (1.0 ponto)
 
 ```
-Algoritmo ContaAprovacoes
+Algoritmo fatorial
+DECLARE fato, n_mult, n: Int
+INICIO
+n_mult = 0
+ESCREVA "Digite o numero do fatorial que voce quer calcular"
+LEIA n
+ENQUANTO n < 0 FAÇA
+	ESCREVA "Digite um fatorial válido"
+	LEIA n
+FIM_ENQUANTO
+PARA n_mult DE 1 PARA n [PASSO 1] FAÇA
+	n_mult =+ 1
+	fato = fato * n_mult
+FIM_PARA
+ESCREVA "O valor do fatorial de", n, "é", fato 
 FIM_ALGORITMO
 ```
 
 #### Teste de mesa (0.5 ponto)
+##### Chat GPT
+| Iteração | Ação                                                          | Entrada/Saída | fato | n_mult |
+|----------|---------------------------------------------------------------|---------------|------|--------|
+| -        | **Inicialização das Variáveis**                               |               | 0    | 0      |
+| -        | **Entrada do Número para o Cálculo do Fatorial**             |               |      |        |
+| 1        | Mensagem: "Digite o número do fatorial que você quer calcular"|               |      |        |
+|          | Entrada: n                                                    |               | -50  |        |
+|          |                                                               |               |      |        |
+| 2        | **Verificação da Validade do Número**                         |               |      |        |
+|          | Mensagem: "Digite um fatorial válido"                         |               |      |        |
+|          | Entrada: n                                                    |               | -50  |        |
+|          |                                                               |               |      |        |
+| -        | **Saída do Resultado**                                        |               |      |        |
+| -        | (nenhuma saída, pois o número não é válido)                   |               |      |        |
 
-| nome_coluna1 | nome_coluna2 | nome_coluna3 | nome_coluna4 | nome_coluna5 | 
-|      --      |      --      |      --      |      --      |      --      | 
-| Adicione     | espaço       | se quiser    |  alinhar     | as barras    |
-| verticais,   | mas          | não é        | obrigatório. | Entendido ?  |
+| Iteração | Ação                                                          | Entrada/Saída | fato | n_mult |
+|----------|---------------------------------------------------------------|---------------|------|--------|
+| -        | **Inicialização das Variáveis**                               |               | 0    | 0      |
+| -        | **Entrada do Número para o Cálculo do Fatorial**             |               |      |        |
+| 1        | Mensagem: "Digite o número do fatorial que você quer calcular"|               |      |        |
+|          | Entrada: n                                                    |               | 0    |        |
+|          |                                                               |               |      |        |
+| 2        | **Verificação da Validade do Número**                         |               |      |        |
+|          | (nenhuma ação necessária, 0 é válido)                         |               |      |        |
+|          |                                                               |               |      |        |
+| -        | **Saída do Resultado**                                        |               |      |        |
+| -        | Mensagem: "O valor do fatorial de 0 é 1"                      |               | 1    |        |
+
+| Iteração | Ação                                                          | Entrada/Saída | fato | n_mult |
+|----------|---------------------------------------------------------------|---------------|------|--------|
+| -        | **Inicialização das Variáveis**                               |               | 0    | 0      |
+| -        | **Entrada do Número para o Cálculo do Fatorial**             |               |      |        |
+| 1        | Mensagem: "Digite o número do fatorial que você quer calcular"|               |      |        |
+|          | Entrada: n                                                    |               | 6    |        |
+|          |                                                               |               |      |        |
+| 2        | **Verificação da Validade do Número**                         |               |      |        |
+|          | (nenhuma ação necessária, 6 é válido)                         |               |      |        |
+|          |                                                               |               |      |        |
+| 3        | **Cálculo do Fatorial**                                       |               |      |        |
+|          | n_mult = 1                                                    |               |      | 1      |
+|          | fato = fato * n_mult                                          |               | 0    | 1      |
+|          |                                                               |               |      |        |
+| 4        | n_mult = 2                                                    |               |      | 2      |
+|          | fato = fato * n_mult                                          |               | 1    | 2      |
+|          |                                                               |               |      |        |
+| 5        | n_mult = 3                                                    |               |      | 3      |
+|          | fato = fato * n_mult                                          |               | 2    | 3      |
+|          |                                                               |               |      |        |
+| 6        | n_mult = 4                                                    |               |      | 4      |
+|          | fato = fato * n_mult                                          |               | 6    | 4      |
+|          |                                                               |               |      |        |
+| 7        | n_mult = 5                                                    |               |      | 5      |
+|          | fato = fato * n_mult                                          |               | 24   | 5      |
+|          |                                                               |               |      |        |
+| 8        | n_mult = 6                                                    |               |      | 6      |
+|          | fato = fato * n_mult                                          |               | 120  | 6      |
+|          |                                                               |               |      |        |
+| -        | **Saída do Resultado**                                        |               |      |        |
+| -        | Mensagem: "O valor do fatorial de 6 é 720"                    |               | 720  |        |
+
 
 ### Questão 6 - Geração da sequência de Fibonacci (2 pontos)
 
