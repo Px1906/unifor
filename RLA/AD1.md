@@ -58,18 +58,18 @@ I --> J([FIM])
 #### Pseudocódigo (0.5 ponto)
 
 ```
-1 Algoritmo TrocaValores
-2 DECLARE A, B, Mem: float
-3 INICIO
-4 ESCREVA "Digite o valor de A"
-5 LEIA A
-6 ESCREVA "Digite o valor de B"
-7 LEIA B
-8 Mem = B
-9 B = A
-10 A = Mem
-11 ESCREVA A, B
-12 FIM_ALGORITMO
+Algoritmo TrocaValores
+DECLARE A, B, Mem: float
+INICIO
+ESCREVA "Digite o valor de A"
+LEIA A
+ESCREVA "Digite o valor de B"
+LEIA B
+Mem = B
+B = A
+A = Mem
+ESCREVA A, B
+FIM_ALGORITMO
 ```
 
 #### Teste de mesa (0.25 ponto)
@@ -87,22 +87,85 @@ Será considerado aprovado o aluno que tirar $nota$ 50 ou maior (no intervalo de
 
 ```mermaid
 flowchart TD
-A([INICIO]) --> B([FIM])
+A([INICIO]) --> B[N_ver = 0]
+B --> C[N_aprov = 0]
+C --> D{{Digite a quanidade de notas para avaliar}}
+D --> E[/N_notas/]
+E --> F{N_notas > 0}
+F --FALSE--> G{{Digite uma quantidade válida}}
+G --> E
+F --TRUE--> H{N_notas = N_ver}
+H --TRUE--> I{{A quantidade de notas aprovadas foi N_aprov}}
+H --FALSE--> J{{Insira a nota}}
+J --> K[/nota/]
+K --> L{nota >= 50 e nota <= 100}
+L --TRUE--> M[N_aprov =+ 1]
+M --> N[N_ver =+ 1]
+L --FALSE--> N
+N --> H
+I --> Z([FIM])
 ```
 
 #### Pseudocódigo (0.5 ponto)
 
 ```
-Algoritmo ContaAprovacoes
-FIM_ALGORITMO
+DECLARE N_ver, N_aprov, N_notas, i: Int
+	notas: Float
+INICIO
+N_ver = 0
+N_aprov = 0 
+ESCREVA "Digite a quanidade de notas para avaliar"
+LEIA N_notas
+ENQUANTO N_notas <= 0 REPITA
+	ESCREVA "Digite uma quantidade válida"
+	LEIA N_notas
+PARA N_ver DE 0 ATÉ N_notas FAÇA [PASSO 1]
+	ESCREVA "Insira a nota"
+	LEIA nota
+	SE nota >= 50 E nota <= 100
+		N_aprov =+ 1
+		N_ver =+ 1
+	SENÃO
+		N_ver =+ 1
+	FIM_SE
+FIM_PARA
+ESCREVA "A quantidade de notas aprovadas foi", N_aprov
+FIM_ALGORÍRIMO
 ```
+#### Teste de mesa (0.25 ponto)  
+##### Chat GPT
+| Iteração | Ação                                              | Entrada/Saída  | N_aprov | N_ver |
+|----------|---------------------------------------------------|----------------|---------|-------|
+|         | **Inicialização das Variáveis**                   |                | 0       | 0     |
+|         | **Entrada do Número de Notas**                    | 5              |         |       |
+| 1        | Mensagem: "Insira a nota"                         |                |         |       |
+|          | Entrada: nota                                     | 70             |         |       |
+|          | Condição SE: 70 >= 50 e 70 <= 100 (verdadeiro)   |                |         |       |
+|          | - N_aprov += 1                                    |                | 1       | 1     |
+|          | - N_ver += 1                                      |                |         | 1     |
+| 2        | Mensagem: "Insira a nota"                         |                |         |       |
+|          | Entrada: nota                                     | 30             |         |       |
+|          | Condição SE: 30 >= 50 e 30 <= 100 (falso)        |                |         |       |
+|          | - N_ver += 1                                      |                |         | 2     |
+| 3        | Mensagem: "Insira a nota"                         |                |         |       |
+|          | Entrada: nota                                     | 85             |         |       |
+|          | Condição SE: 85 >= 50 e 85 <= 100 (verdadeiro)   |                |         |       |
+|          | - N_aprov += 1                                    |                | 2       | 3     |
+|          | - N_ver += 1                                      |                |         | 3     |
+| 4        | Mensagem: "Insira a nota"                         |                |         |       |
+|          | Entrada: nota                                     | 95             |         |       |
+|          | Condição SE: 95 >= 50 e 95 <= 100 (verdadeiro)   |                |         |       |
+|          | - N_aprov += 1                                    |                | 3       | 4     |
+|          | - N_ver += 1                                      |                |         | 4     |
+| 5        | Mensagem: "Insira a nota"                         |                |         |       |
+|          | Entrada: nota                                     | 40             |         |       |
+|          | Condição SE: 40 >= 50 e 40 <= 100 (falso)        |                |         |       |
+|          | - N_ver += 1                                      |                |         | 5     |
+| -        | **Saída de Resultados**                           |                |         |       |
+| -        | Mensagem: "A quantidade de notas aprovadas foi 3"|                |         |       |
 
-#### Teste de mesa (0.25 ponto)
 
-| nome_coluna1 | nome_coluna2 | nome_coluna3 | nome_coluna4 | nome_coluna5 | 
-|      --      |      --      |      --      |      --      |      --      | 
-| Adicione     | espaço       | se quiser    |  alinhar     | as barras    |
-| verticais,   | mas          | não é        | obrigatório. | Entendido ?  |
+
 
 ### Questão 3 - Soma de um conjunto de números (1 ponto)
 
