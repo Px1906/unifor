@@ -113,14 +113,13 @@ Algoritimo aprovação
 DECLARE N_ver, N_aprov, N_notas, i: Int
 	notas: Float
 INICIO
-N_ver = 0
 N_aprov = 0 
 ESCREVA "Digite a quanidade de notas para avaliar"
 LEIA N_notas
 ENQUANTO N_notas <= 0 REPITA
 	ESCREVA "Digite uma quantidade válida"
 	LEIA N_notas
-PARA N_ver DE 0 ATÉ N_notas FAÇA [PASSO 1]
+PARA N_ver DE 1 ATÉ N_notas FAÇA [PASSO 1]
 	ESCREVA "Insira a nota"
 	LEIA nota
 	SE nota >= 50 E nota <= 100
@@ -267,8 +266,7 @@ $$ S = \frac{1}{2} + \frac{3}{4} + \frac{5}{6} + \frac{7}{8} + \dots $$
 ```mermaid
 flowchart TD
 A([INICIO]) --> B[S = 0]
-B --> C[termo = 0]
-C --> D{{Digite a quantidade de termos da série que voce quer somar}}
+B --> D{{Digite a quantidade de termos da série que voce quer somar}}
 D --> E[/Num_termo/]
 E --> F{Num_termo > 0}
 F --FALSE--> G{{Digite uma quantidade válida}}
