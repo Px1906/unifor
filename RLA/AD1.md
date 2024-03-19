@@ -301,11 +301,57 @@ ESCREVA "O valor da soma de", Num_termo, "termo(s) da série é", S
 FIM_ALGORITMO
 ```
 #### Teste de mesa (0.25 ponto)
+##### Chat GPT
 
-| nome_coluna1 | nome_coluna2 | nome_coluna3 | nome_coluna4 | nome_coluna5 | 
-|      --      |      --      |      --      |      --      |      --      | 
-| Adicione     | espaço       | se quiser    |  alinhar     | as barras    |
-| verticais,   | mas          | não é        | obrigatório. | Entendido ?  |
+| Iteração | Ação                                                 | Entrada/Saída | S     |
+|----------|------------------------------------------------------|---------------|-------|
+| -        | **Inicialização das Variáveis**                      |               | 0     |
+| -        | **Entrada do Número de Termos da Série**            |               |       |
+| 1        | Mensagem: "Digite a quantidade de termos da série"  |               |       |
+|          | Entrada: Num_termo                                   |               | -3    |
+|          |                                                      |               |       |
+| 2        | **Verificação do Número de Termos**                  |               |       |
+|          | Enquanto Num_termo < 0 FAÇA                         |               |       |
+|          |   Mensagem: "Digite uma quantidade válida"          |               |       |
+|          |   Entrada: Num_termo                                 |               |       |
+|          | FIM_ENQUANTO                                        |               |       |
+|          |                                                      |               |       |
+| -        | **Saída de Resultados (Nenhum Cálculo Realizado)**  |               |       |
+| -        | Mensagem: "O valor da soma de -3 termo(s) da série é" |             |       |
+|          |                  0                                   |               |       |
+
+
+
+| Iteração | Ação                                                 | Entrada/Saída | S           |
+|----------|------------------------------------------------------|---------------|-------------|
+| -        | **Inicialização das Variáveis**                      |               | 0           |
+| -        | **Entrada do Número de Termos da Série**            |               |             |
+| 1        | Mensagem: "Digite a quantidade de termos da série"  |               |             |
+|          | Entrada: Num_termo                                   |               | 5           |
+|          |                                                      |               |             |
+| 2        | **Loop de Cálculo da Soma da Série**                |               |             |
+|          | termo = 1                                             |               |             |
+|          | S =+ (2 * termo - 1)/(2 * termo)                     |               | 0.5         |
+|          |                                                      |               |             |
+| 3        | termo = 2                                             |               |             |
+|          | S =+ (2 * termo - 1)/(2 * termo)                     |               | 1.25       |
+|          |                                                      |               |             |
+| 4        | termo = 3                                             |               |             |
+|          | S =+ (2 * termo - 1)/(2 * termo)                     |               | 2.0833       |
+|          |                                                      |               |             |
+| 5        | termo = 4                                             |               |             |
+|          | S =+ (2 * termo - 1)/(2 * termo)                     |               | 2.9583       |
+|          |                                                      |               |             |
+| 6        | termo = 5                                             |               |             |
+|          | S =+ (2 * termo - 1)/(2 * termo)                     |               | 3.8583       |
+|          |                                                      |               |             |
+| -        | **Saída de Resultados**                              |               |             |
+| -        | Mensagem: "O valor da soma de 5 termos da série é" 3.8583    |               | 3.8583      |
+
+
+
+
+
 
 ### Questão 5 - Cálculo fatorial (2 pontos)
 
