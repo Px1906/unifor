@@ -87,8 +87,8 @@ Será considerado aprovado o aluno que tirar $nota$ 50 ou maior (no intervalo de
 
 ```mermaid
 flowchart TD
-A([INICIO]) --> B[N_ver = 0]
-B --> C[N_aprov = 0]
+A([INICIO])
+A --> C[N_aprov = 0]
 C --> D{{Digite a quanidade de notas para avaliar}}
 D --> E[/N_notas/]
 E --> F{N_notas > 0}
@@ -176,8 +176,8 @@ Aceite apenas $n$ maior ou igual a zero.
 
 ```mermaid
 flowchart TD
-A([INICIO]) --> B[num_somados = 0]
-B --> C[soma = 0]
+A([INICIO])
+A --> C[soma = 0]
 C --> D{{Digite o número de elementos do conjunto que você quer somar}}
 D --> E[/num_som/]
 E --> F{num_som > 0}
