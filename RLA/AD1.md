@@ -109,6 +109,7 @@ I --> Z([FIM])
 #### Pseudocódigo (0.5 ponto)
 
 ```
+Algoritimo aprovação
 DECLARE N_ver, N_aprov, N_notas, i: Int
 	notas: Float
 INICIO
@@ -196,23 +197,21 @@ M --> N([FIM])
 #### Pseudocódigo (0.5 ponto)
 
 ```
-Algoritmo ContaAprovacoes
-DECLARE num_somados, num_som: Int
+Algoritmo soma_de_valores
+DECLARE num_somados, num_soma: Int
 	num, soma: Float
 INICIO
-num_somados = 0
 soma = 0
 ESCREVA "Digite o número de elementos do conjunto que você quer somar"
-LEIA num_som
-ENQUANTO num_som < 0 FAÇA
+LEIA num_soma
+ENQUANTO num_soma <= 0 FAÇA
 	ESCREVA "Digite uma quantidade válida"
-	LEIA num_som
+	LEIA num_soma
 FIM_ENQUANTO
 PARA num_somados DE 0 até Num_soma [PASSO 1] FAÇA
 	ESCREVA "Digite um número"
 	LEIA num
 	soma =+ num
-	num_somados =+ 1
 FIM_PARA
 ESCREVA "O valor da soma total é", soma
 FIM_ALGORITMO
@@ -267,16 +266,40 @@ $$ S = \frac{1}{2} + \frac{3}{4} + \frac{5}{6} + \frac{7}{8} + \dots $$
 
 ```mermaid
 flowchart TD
-A([INICIO]) --> B([FIM])
+A([INICIO]) --> B[S = 0]
+B --> C[termo = 0]
+C --> D{{Digite a quantidade de termos da série que voce quer somar}}
+D --> E[/Num_termo/]
+E --> F{Num_termo > 0}
+F --FALSE--> G{{Digite uma quantidade válida}}
+G --> E
+F --TRUE--> H{Num_termo = termo}
+H --FALSE--> I[termo =+ 1]
+I --> J["S =+ (2 * termo - 1)/(2 * termo)"]
+J --> H
+H --TRUE--> K{{"O valor da soma de Num_termos termo(s) da série é S"}}
+K --> L([FIM])
 ```
 
 #### Pseudocódigo (0.5 ponto)
-
 ```
-Algoritmo ContaAprovacoes
+Algoritmo soma_da_serie
+DECLARE Num_termo, termo: Int
+	S: Float
+INICIO
+S = 0
+ESCREVA "Digite a quantidade de termos da série que você quer somar"
+LEIA Num_termo
+ENQUANTO Num_termo < 0 FAÇA
+	ESCREVA "Digite uma quantidade válida"
+	LEIA Num_termo
+FIM_ENQUANTO
+PARA termo DE 1 ATÉ Num_termo [PASSO 1] FAÇA
+	S =+ (2 * termo - 1)/(2 * termo)
+FIM_PARA
+ESCREVA "O valor da soma de", Num_termo, "termo(s) da série é", S
 FIM_ALGORITMO
 ```
-
 #### Teste de mesa (0.25 ponto)
 
 | nome_coluna1 | nome_coluna2 | nome_coluna3 | nome_coluna4 | nome_coluna5 | 
