@@ -208,7 +208,7 @@ ENQUANTO num_soma <= 0 FAÇA
 	ESCREVA "Digite uma quantidade válida"
 	LEIA num_soma
 FIM_ENQUANTO
-PARA num_somados DE 0 até Num_soma [PASSO 1] FAÇA
+PARA num_somados DE 1 até Num_soma [PASSO 1] FAÇA
 	ESCREVA "Digite um número"
 	LEIA num
 	soma =+ num
@@ -289,7 +289,7 @@ DECLARE Num_termo, termo: Int
 INICIO
 S = 0
 ESCREVA "Digite a quantidade de termos da série que você quer somar"
-LEIA Num_termo
+LEIA Num_termo // 3 
 ENQUANTO Num_termo < 0 FAÇA
 	ESCREVA "Digite uma quantidade válida"
 	LEIA Num_termo
