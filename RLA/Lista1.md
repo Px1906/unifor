@@ -1,5 +1,5 @@
 # UNIFOR
-**Nome**: Sergio de Paiva <br>
+**Nome**: Sergio de Paiva Ximenes Filho <br>
 **Disciplina**: Raciocinio lógico e Algorítimo
 
 ## Lista de exercícios 01
