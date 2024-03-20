@@ -1,12 +1,12 @@
 <img src="https://drive.google.com/uc?id=1SOzRTjUt7cuBJpSqoK90fcAiKBrnpUJo" width="400">
 
-**Curso:** preencha com seus dados <br>
-**Disciplina:** preencha com seus dados <br>
-**Código/Turma:** preencha com seus dados <br>
+**Curso:** Engenharia da Computação <br>
+**Disciplina:** Raciocinio Lógico e ALgorítimo <br>
+**Código/Turma:** T998-21 <br>
 **Professor:** Ricardo Carubbi <br>
-**Data:** preencha com a data de envio <br>
-**Aluno(a):** preencha com seus dados <br>
-**Matrícula:** preencha com seus dados <br>
+**Data:** 20/03 <br>
+**Aluno(a):** Sergio de Paiva Ximenes Filho <br>
+**Matrícula:** 2410330 <br>
 
 **1a chamada (Sim/Não):** preencha com a opção correta <br>
 **2a chamada (Sim/Não):** preencha com a opção correta
