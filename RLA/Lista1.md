@@ -1,6 +1,6 @@
 # UNIFOR
-**Nome**: Nome do estudante <br>
-**Disciplina**: Raciocínio lógico algorítmico
+**Nome**: Sergio de Paiva <br>
+**Disciplina**: Raciocinio lógico e Algorítimo
 
 ## Lista de exercícios 01
 
