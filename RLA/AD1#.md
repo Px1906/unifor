@@ -505,10 +505,22 @@ I --LOOP--> E
 #### Pseudocódigo (2 pontos)
 
 ```
-Algoritmo GeraFibonacci
+Algoritimo fibonacci
+DECLARE T1, T2, Tmem, TS, i: Int
 INICIO
-...
-FIM
+T1 = 0
+T2 = 1
+ESCREVA "Digite qual termo de fibonacci você quer calcular"
+LEIA TS
+ENQUANTO TS <= 0 FAÇA
+	ESCREVA "Digite um termo válido"
+	LEIA TS
+FIM_ENQUANTO
+PARA i DE 1 ATÉ TS [PASSO 1] FAÇA
+	Tmem = T1 + T2
+	T1 = T2
+	T2 = Tmem
+
 ```
 #### Teste de mesa
 
