@@ -69,20 +69,20 @@ I --> J([FIM])
 ```
 
 #### Pseudocódigo (1 ponto)
-
-```mermaid
-flowchart TD
-A([INICIO]) --> B{{"Digite o valor de A"}}
-B --> C[/A/]
-C --> D{{"Digite o valor de B"}}
-D --> E[/B/]
-E --> F(Mem = B)
-F --> G(B = A)
-G --> H(A = Mem)
-H --> I{{A, B}}
-I --> J([FIM])
 ```
-
+Algoritmo TrocaValores
+DECLARE A, B, Mem: float
+INICIO
+ESCREVA "Digite o valor de A"
+LEIA A
+ESCREVA "Digite o valor de B"
+LEIA B
+Mem = B
+B = A
+A = Mem
+ESCREVA A, B
+FIM_ALGORITMO
+```
 #### Teste de mesa
 
 | A  | B | Mem = B | B = A | A = Mem | Saida |
@@ -517,20 +517,85 @@ ENQUANTO TS <= 0 FAÇA
 	LEIA TS
 FIM_ENQUANTO
 PARA i DE 1 ATÉ TS [PASSO 1] FAÇA
+	ESRCREVA T1
 	Tmem = T1 + T2
 	T1 = T2
 	T2 = Tmem
-
+FIM_PARA
+FIM_ALGORITIMO
 ```
 #### Teste de mesa
 
-| it | n  | a  | b  | i  | saída | termo_atual = a + b | a = b | b = termo_atual |
-| -- | -- | -- | -- | -- | --    | --                  | --    | --              |
-| 1  | 5  | 0  | 1  | 1  | 0     | 0 + 1 = 1           | 1     | 1               |
-| 2  | 5  | 1  | 1  | 2  | 1     | 1 + 1 = 2           | 1     | 2               |
-| 3  | 5  | 1  | 2  | 3  | 1     | 1 + 2 = 3           | 2     | 3               |
-| 4  | 5  | 2  | 3  | 4  | 2     | 2 + 3 = 5           | 3     | 5               |
-| 4  | 5  | 3  | 5  | 5  | 3     | 3 + 5 = 8           | 5     | 8               |
+| Iteração | Ação                                                             | Entrada/Saída | T1  | T2  | Tmem | TS |
+|----------|------------------------------------------------------------------|---------------|-----|-----|------|----|
+| -        | **Inicialização das Variáveis**                                  |               | 0   | 1   |      |    |
+| -        | **Entrada do Termo de Fibonacci a ser calculado**               |               |     |     |      | 5  |
+| 1        | Mensagem: "Digite qual termo de Fibonacci você quer calcular"   |               |     |     |      |    |
+|          | Entrada: TS                                                      |               |     |     |      | 5  |
+|          |                                                                  |               |     |     |      |    |
+| 2        | **Verificação da Validade do Número**                            |               |     |     |      |    |
+|          | (nenhuma ação necessária, 5 é válido)                           |               |     |     |      |    |
+|          |                                                                  |               |     |     |      |    |
+| 3        | **Cálculo do Termo de Fibonacci**                                |               |     |     |      |    |
+|          | PARA i DE 1 ATÉ 5 [PASSO 1] FAÇA                                 |               |     |     |      |    |
+|          |                                                                  |               |     |     |      |    |
+| 4        | i = 1                                                            |               |     |     |      |    |
+|          | Escreva: T1                                                      |               | 0   | 1   |      |    |
+|          | Escreva: Tmem                                                    |               |     |     | 1    |    |
+|          | Tmem = T1 + T2                                                   |               |     |     |      |    |
+|          | T1 = T2                                                          |               | 1   |     |      |    |
+|          | T2 = Tmem                                                        |               |     | 1   |      |    |
+|          |                                                                  |               |     |     |      |    |
+| 5        | i = 2                                                            |               |     |     |      |    |
+|          | Escreva: T1                                                      |               | 1   | 1   |      |    |
+|          | Escreva: Tmem                                                    |               |     |     | 2    |    |
+|          | Tmem = T1 + T2                                                   |               |     |     |      |    |
+|          | T1 = T2                                                          |               | 1   |     |      |    |
+|          | T2 = Tmem                                                        |               |     | 2   |      |    |
+|          |                                                                  |               |     |     |      |    |
+| 6        | i = 3                                                            |               |     |     |      |    |
+|          | Escreva: T1                                                      |               | 1   | 2   |      |    |
+|          | Escreva: Tmem                                                    |               |     |     | 3    |    |
+|          | Tmem = T1 + T2                                                   |               |     |     |      |    |
+|          | T1 = T2                                                          |               | 2   |     |      |    |
+|          | T2 = Tmem                                                        |               |     | 3   |      |    |
+|          |                                                                  |               |     |     |      |    |
+| 7        | i = 4                                                            |               |     |     |      |    |
+|          | Escreva: T1                                                      |               | 2   | 3   |      |    |
+|          | Escreva: Tmem                                                    |               |     |     | 5    |    |
+|          | Tmem = T1 + T2                                                   |               |     |     |      |    |
+|          | T1 = T2                                                          |               | 3   |     |      |    |
+|          | T2 = Tmem                                                        |               |     | 5   |      |    |
+|          |                                                                  |               |     |     |      |    |
+| 8        | i = 5                                                            |               |     |     |      |    |
+|          | Escreva: T1                                                      |               | 3   | 5   |      |    |
+|          | Escreva: Tmem                                                    |               |     |     | 8    |    |
+|          | Tmem = T1 + T2                                                   |               |     |     |      |    |
+|          | T1 = T2                                                          |               | 5   |     |      |    |
+
+| Iteração | Ação                                                             | Entrada/Saída | T1  | T2  | Tmem | TS |
+|----------|------------------------------------------------------------------|---------------|-----|-----|------|----|
+| -        | **Inicialização das Variáveis**                                  |               | 0   | 1   |      |    |
+| -        | **Entrada do Termo de Fibonacci a ser calculado**               |               |     |     |      | 0  |
+| 1        | Mensagem: "Digite qual termo de Fibonacci você quer calcular"   |               |     |     |      |    |
+|          | Entrada: TS                                                      |               |     |     |      | 0  |
+|          |                                                                  |               |     |     |      |    |
+| 2        | **Verificação da Validade do Número**                            |               |     |     |      |    |
+|          | Mensagem: "Digite um termo válido"                               |               |     |     |      |    |
+|          | (Loop de entrada será repetido até que um número válido seja dado) |             |     |     |      |    |
+|          |                                                                  |               |     |     |      |    |
+
+| Iteração | Ação                                                             | Entrada/Saída | T1  | T2  | Tmem | TS |
+|----------|------------------------------------------------------------------|---------------|-----|-----|------|----|
+| -        | **Inicialização das Variáveis**                                  |               | 0   | 1   |      |    |
+| -        | **Entrada do Termo de Fibonacci a ser calculado**               |               |     |     |      | -90|
+| 1        | Mensagem: "Digite qual termo de Fibonacci você quer calcular"   |               |     |     |      |    |
+|          | Entrada: TS                                                      |               |     |     |      | -90|
+|          |                                                                  |               |     |     |      |    |
+| 2        | **Verificação da Validade do Número**                            |               |     |     |      |    |
+|          | Mensagem: "Digite um termo válido"                               |               |     |     |      |    |
+|          | (Loop de entrada será repetido até que um número válido seja dado) |             |     |     |      |    |
+|          |                                                                  |               |     |     |      |    |
 
 ### Questão 7 - Inversão dos dígitos de um número inteiro (2 pontos)
 
