@@ -387,7 +387,7 @@ H --> I[fato = fato * n_mult]
 I --> G
 G --TRUE--> Y{{O valor do fatorial de n é fato}}
 Y --> Z([FIM]) 
-
+```
 #### Pseudocódigo (2 pontos)
 
 ```
@@ -428,10 +428,10 @@ FIM_ALGORITMO
 
 | Iteração | Ação                                                          | Entrada/Saída | fato | n_mult |
 |----------|---------------------------------------------------------------|---------------|------|--------|
-| -        | **Inicialização das Variáveis**                               |               | 0    | 0      |
+| -        | **Inicialização das Variáveis**                               |               | 1    | 0      |
 | -        | **Entrada do Número para o Cálculo do Fatorial**             |               |      |        |
 | 1        | Mensagem: "Digite o número do fatorial que você quer calcular"|               |      |        |
-|          | Entrada: n                                                    |               | 0    |        |
+|          | Entrada: n                                                    |               | 1    |        |
 |          |                                                               |               |      |        |
 | 2        | **Verificação da Validade do Número**                         |               |      |        |
 |          | (nenhuma ação necessária, 0 é válido)                         |               |      |        |
@@ -441,7 +441,7 @@ FIM_ALGORITMO
 
 | Iteração | Ação                                                          | Entrada/Saída | fato | n_mult |
 |----------|---------------------------------------------------------------|---------------|------|--------|
-| -        | **Inicialização das Variáveis**                               |               | 0    | 0      |
+| -        | **Inicialização das Variáveis**                               |               | 1    | 0      |
 | -        | **Entrada do Número para o Cálculo do Fatorial**             |               |      |        |
 | 1        | Mensagem: "Digite o número do fatorial que você quer calcular"|               |      |        |
 |          | Entrada: n                                                    |               | 6    |        |
@@ -451,7 +451,7 @@ FIM_ALGORITMO
 |          |                                                               |               |      |        |
 | 3        | **Cálculo do Fatorial**                                       |               |      |        |
 |          | n_mult = 1                                                    |               |      | 1      |
-|          | fato = fato * n_mult                                          |               | 0    | 1      |
+|          | fato = fato * n_mult                                          |               | 1    | 1      |
 |          |                                                               |               |      |        |
 | 4        | n_mult = 2                                                    |               |      | 2      |
 |          | fato = fato * n_mult                                          |               | 1    | 2      |
