@@ -634,16 +634,54 @@ E --> W
 
 ```
 Algoritimo Inver
-DECLARE
-
+DECLARE Num, Num_inv, mem, mem2: Int
+INICIO
+ESCREVA "Digite o número que voce quer inverter"
+LEIA Num
+mem2 = Num
+ENQUANTO Num <= 9 FAÇA
+	ESCREVA "O número precisa ser positivo e ter mais de dois algarismos"
+	ESCREVA "Digite o número que voce quer inverter"
+FIM_ENQUANTO
+ENQUANTO Num > 0 FAÇA
+	mem = Num % 10
+        Num =// 10
+	Num_inv =* 10
+	Num_inv =+ mem
+FIM_ENQUANTO
+ESCREVA "O número", mem2, "após inverter os algarismos é", Num_inv
+FIM_ALGORITIMO 
 ```
 
 #### Teste de mesa
+##### Chat GPT
 
-| it | num | num_inv | num > 0 | digito | num = num // 10 | num_inv = (num_inv * 10) + digito | Saída                       |
-| -- | --  | --      | --     | --      | --              | --                                | --                          |
-|    | -1  | 0       | False  |         |                 |                                   | O número deve ser positivo! |
-| 1  | 0   | 0       | False  |         |                 |                                   | Número invertido:: 0        |
-| 1  | 42  | 0       | True   | 2       | 4               | 2                                 |                             |
-| 2  | 4   | 2       | True   | 4       | 0               | 24                                |                             |
-| 3  | 0   | 24      | False  |         |                 |                                   | Número invertido:: 24       |
+| Iteração | Ação                                      | Entrada/Saída | Num    | Num_inv | mem  |
+|----------|-------------------------------------------|----------------|--------|---------|------|
+| -        | **Inicialização**                         |                | 12345  | 0       | -    |
+| 1        | Leitura do número a ser invertido         |                | 12345  | 0       | -    |
+| -        | Verificação da validade do número         |                | 12345  | 0       | -    |
+| -        | (Número válido)                            |                | 12345  | 0       | -    |
+| 2        | Início do loop de inversão                |                | 12345  | 0       | -    |
+| 2.1      | Cálculo do resto da divisão por 10 (mem)  |                | 12345  | 0       | 5    |
+| 2.2      | Atualização do número (Num //= 10)        |                | 1234   | 0       | 5    |
+| 2.3      | Multiplicação e adição (Num_inv)          |                | 1234   | 5       | 5    |
+| 3        | Próxima iteração                          |                | 1234   | 5       | -    |
+| 3.1      | Cálculo do resto da divisão por 10 (mem)  |                | 1234   | 5       | 4    |
+| 3.2      | Atualização do número (Num //= 10)        |                | 123    | 5       | 4    |
+| 3.3      | Multiplicação e adição (Num_inv)          |                | 123    | 54      | 4    |
+| 4        | Próxima iteração                          |                | 123    | 54      | -    |
+| 4.1      | Cálculo do resto da divisão por 10 (mem)  |                | 123    | 54      | 3    |
+| 4.2      | Atualização do número (Num //= 10)        |                | 12     | 54      | 3    |
+| 4.3      | Multiplicação e adição (Num_inv)          |                | 12     | 543     | 3    |
+| 5        | Próxima iteração                          |                | 12     | 543     | -    |
+| 5.1      | Cálculo do resto da divisão por 10 (mem)  |                | 12     | 543     | 2    |
+| 5.2      | Atualização do número (Num //= 10)        |                | 1      | 543     | 2    |
+| 5.3      | Multiplicação e adição (Num_inv)          |                | 1      | 5432    | 2    |
+| 6        | Próxima iteração                          |                | 1      | 5432    | -    |
+| 6.1      | Cálculo do resto da divisão por 10 (mem)  |                | 1      | 5432    | 1    |
+| 6.2      | Atualização do número (Num //= 10)        |                | 0      | 5432    | 1    |
+| 6.3      | Multiplicação e adição (Num_inv)          |                | 0      | 54321   | 1    |
+| 7        | Próxima iteração                          |                | 0      | 54321   | -    |
+| 7.1      | (Condição de saída do loop)               |                | 0      | 54321   | -    |
+| -        | **Saída do Resultado**                    | O número 12345 após inverter os algarismos é 54321| 0      | 54321   | -    |
