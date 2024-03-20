@@ -8,8 +8,8 @@
 **Aluno(a):** Sergio de Paiva Ximenes Filho <br>
 **Matrícula:** 2410330 <br>
 
-**1a chamada (Sim/Não):** preencha com a opção correta <br>
-**2a chamada (Sim/Não):** preencha com a opção correta
+**1a chamada (Sim/Não):** sim <br>
+**2a chamada (Sim/Não):** não
 
 # Avaliação Diagnóstica 1
 
