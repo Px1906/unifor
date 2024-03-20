@@ -541,36 +541,36 @@ FIM_ALGORITIMO
 |          |                                                                  |               |     |     |      |    |
 | 4        | i = 1                                                            |               |     |     |      |    |
 |          | Escreva: T1                                                      |               | 0   | 1   |      |    |
-|          | Escreva: Tmem                                                    |               |     |     | 1    |    |
-|          | Tmem = T1 + T2                                                   |               |     |     |      |    |
+|          |                                                                  |               |     |     |     |    |
+|          | Tmem = T1 + T2                                                   |               |     |     | 1     |    |
 |          | T1 = T2                                                          |               | 1   |     |      |    |
 |          | T2 = Tmem                                                        |               |     | 1   |      |    |
 |          |                                                                  |               |     |     |      |    |
 | 5        | i = 2                                                            |               |     |     |      |    |
 |          | Escreva: T1                                                      |               | 1   | 1   |      |    |
-|          | Escreva: Tmem                                                    |               |     |     | 2    |    |
-|          | Tmem = T1 + T2                                                   |               |     |     |      |    |
+|          |                                                                  |               |     |     |    |    |
+|          | Tmem = T1 + T2                                                   |               |     |     | 2     |    |
 |          | T1 = T2                                                          |               | 1   |     |      |    |
 |          | T2 = Tmem                                                        |               |     | 2   |      |    |
 |          |                                                                  |               |     |     |      |    |
 | 6        | i = 3                                                            |               |     |     |      |    |
 |          | Escreva: T1                                                      |               | 1   | 2   |      |    |
-|          | Escreva: Tmem                                                    |               |     |     | 3    |    |
-|          | Tmem = T1 + T2                                                   |               |     |     |      |    |
+|          |                                                                  |               |     |     |      |    |
+|          | Tmem = T1 + T2                                                   |               |     |     |  3    |    |
 |          | T1 = T2                                                          |               | 2   |     |      |    |
 |          | T2 = Tmem                                                        |               |     | 3   |      |    |
 |          |                                                                  |               |     |     |      |    |
 | 7        | i = 4                                                            |               |     |     |      |    |
 |          | Escreva: T1                                                      |               | 2   | 3   |      |    |
-|          | Escreva: Tmem                                                    |               |     |     | 5    |    |
-|          | Tmem = T1 + T2                                                   |               |     |     |      |    |
+|          |                                                                  |               |     |     |    |    |
+|          | Tmem = T1 + T2                                                   |               |     |     | 5     |    |
 |          | T1 = T2                                                          |               | 3   |     |      |    |
 |          | T2 = Tmem                                                        |               |     | 5   |      |    |
 |          |                                                                  |               |     |     |      |    |
 | 8        | i = 5                                                            |               |     |     |      |    |
 |          | Escreva: T1                                                      |               | 3   | 5   |      |    |
-|          | Escreva: Tmem                                                    |               |     |     | 8    |    |
-|          | Tmem = T1 + T2                                                   |               |     |     |      |    |
+|          |                                                                  |               |     |     |      |    |
+|          | Tmem = T1 + T2                                                   |               |     |     |   8   |    |
 |          | T1 = T2                                                          |               | 5   |     |      |    |
 
 | Iteração | Ação                                                             | Entrada/Saída | T1  | T2  | Tmem | TS |
@@ -633,10 +633,9 @@ E --> W
 #### Pseudocódigo (2 pontos)
 
 ```
-Algoritmo InverteInteiro
-INICIO
-...
-FIM
+Algoritimo Inver
+DECLARE
+
 ```
 
 #### Teste de mesa
